@@ -1,6 +1,7 @@
-# estudosflutter
+# Estudo de Flutter com a Pokédex
 
-A new Flutter project.
+Meu primeiro projeto em Flutter para obter conhecimento e praticar. 
+No momento ainda estou praticando sem API, apenas criando objetos, mas em breve estarei utilizando uma API pra puxar as informações dos pokémons.
 
 ## Getting Started
 
