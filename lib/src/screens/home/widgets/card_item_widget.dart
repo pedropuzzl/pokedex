@@ -22,7 +22,7 @@ class _CardItemWidgetState extends State<CardItemWidget> {
       scale: isHover ? 0.91 : 0.9,
       child: AnimatedContainer(
         margin: const EdgeInsets.symmetric(
-          horizontal: 48,
+          horizontal: 24,
           vertical: 12,
         ),
         padding: const EdgeInsets.all(32),
@@ -39,66 +39,71 @@ class _CardItemWidgetState extends State<CardItemWidget> {
           color: Colors.white,
         ),
         duration: const Duration(milliseconds: 200),
-        child: MouseRegion(
-          onHover: (value) {
-            setState(() {
-              isHover = true;
-            });
-          },
-          onExit: (value) {
-            setState(() {
-              isHover = false;
-            });
-          },
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(96, 230, 230, 230),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Center(
-                  child: Image.network(
-                    widget.pokemon.url,
-                    width: 250,
-                    height: 250,
+        child: IgnorePointer(
+          ignoring: true,
+          child: MouseRegion(
+            onHover: (value) {
+              setState(() {
+                isHover = true;
+              });
+            },
+            onExit: (value) {
+              setState(() {
+                isHover = false;
+              });
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(96, 230, 230, 230),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Center(
+                    child: Image.network(
+                      widget.pokemon.url,
+                      width: 250,
+                      height: 250,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Nº ${widget.pokemon.id.toString().padLeft(3, '0')}',
-                style: TextStyle(
-                  color: Colors.grey.shade400,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.pokemon.name,
-                    style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w500),
+                const SizedBox(height: 8),
+                Text(
+                  'Nº ${widget.pokemon.id.toString().padLeft(3, '0')}',
+                  style: TextStyle(
+                    color: Colors.grey.shade400,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
                   ),
-                  const SizedBox(height: 2),
-                  Wrap(
-                    spacing: 4,
-                    children: List.generate(
+                ),
+                const SizedBox(height: 8),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.pokemon.name,
+                      style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(height: 2),
+                    Wrap(
+                      spacing: 4,
+                      children: List.generate(
                         widget.pokemon.types.length,
                         (index) => TypeItemWidget(
-                            text: widget.pokemon.types[index].name,
-                            color: widget.pokemon.types[index].color)),
-                  ),
-                ],
-              )
-            ],
+                          text: widget.pokemon.types[index].name,
+                          color: widget.pokemon.types[index].color,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
