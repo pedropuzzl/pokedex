@@ -1,5 +1,6 @@
 import 'package:estudosflutter/src/models/type/type.dart';
 import 'package:flutter/cupertino.dart';
+import '../type/weakness.dart';
 
 class Pokemon {
   final int id;
@@ -11,6 +12,11 @@ class Pokemon {
   final String maleDescription;
   final String femaleDescription;
   final Sex sex;
+  final double height;
+  final double weight;
+  final String category;
+  final String abilities;
+  final List<Weak> weakness;
 
   Pokemon({
     required this.id,
@@ -21,6 +27,11 @@ class Pokemon {
     required this.subcolor,
     required this.maleDescription,
     required this.femaleDescription,
+    required this.height,
+    required this.weight,
+    required this.category,
+    required this.abilities,
+    required this.weakness,
     this.sex = Sex.male,
   });
 }

@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:estudosflutter/src/models/pokemon/pokemon.dart';
 import 'package:estudosflutter/src/models/type/type.dart';
+import 'package:estudosflutter/src/models/type/weakness.dart';
 import 'package:estudosflutter/src/screens/home/widgets/card_item_widget.dart';
 import 'package:estudosflutter/src/screens/home/widgets/card_item_widget_expanded.dart';
 import 'package:estudosflutter/src/screens/home/widgets/header_widget.dart';
@@ -29,6 +30,16 @@ class _HomeScreenState extends State<HomeScreen> {
       maleDescription:
           'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
       femaleDescription: '',
+      height: 0.7,
+      abilities: 'Overgrow',
+      category: 'Seed',
+      weight: 6.9,
+      weakness: [
+        Weak(name: 'Fire', color: Colors.red),
+        Weak(name: 'Psychic', color: Colors.pink),
+        Weak(name: 'Flying', color: Colors.grey),
+        Weak(name: 'Ice', color: Colors.cyan),
+      ],
     ),
     Pokemon(
       id: 02,
@@ -43,6 +54,16 @@ class _HomeScreenState extends State<HomeScreen> {
       maleDescription:
           'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
       femaleDescription: '',
+      height: 1.0,
+      abilities: 'Overgrow',
+      category: 'Seed',
+      weight: 13.0,
+      weakness: [
+        Weak(name: 'Fire', color: Colors.red),
+        Weak(name: 'Psychic', color: Colors.pink),
+        Weak(name: 'Flying', color: Colors.grey),
+        Weak(name: 'Ice', color: Colors.cyan),
+      ],
     ),
     Pokemon(
       id: 03,
@@ -57,6 +78,16 @@ class _HomeScreenState extends State<HomeScreen> {
       maleDescription:
           'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.',
       femaleDescription: '',
+      height: 2.0,
+      abilities: 'Overgrow',
+      category: 'Seed',
+      weight: 100.0,
+      weakness: [
+        Weak(name: 'Fire', color: Colors.red),
+        Weak(name: 'Psychic', color: Colors.pink),
+        Weak(name: 'Flying', color: Colors.grey),
+        Weak(name: 'Ice', color: Colors.cyan),
+      ],
     ),
     Pokemon(
       id: 04,
@@ -70,6 +101,15 @@ class _HomeScreenState extends State<HomeScreen> {
       maleDescription:
           'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.',
       femaleDescription: '',
+      height: 0.6,
+      abilities: 'Blaze',
+      category: 'Lizard',
+      weight: 8.5,
+      weakness: [
+        Weak(name: 'Water', color: Colors.blue),
+        Weak(name: 'Ground', color: Colors.orange),
+        Weak(name: 'Rock', color: Colors.brown),
+      ],
     ),
     Pokemon(
       id: 05,
@@ -84,6 +124,15 @@ class _HomeScreenState extends State<HomeScreen> {
       maleDescription:
           'It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.',
       femaleDescription: '',
+      height: 1.1,
+      abilities: 'Blaze',
+      category: 'Flame',
+      weight: 19.0,
+      weakness: [
+        Weak(name: 'Water', color: Colors.blue),
+        Weak(name: 'Ground', color: Colors.orange),
+        Weak(name: 'Rock', color: Colors.brown),
+      ],
     ),
     Pokemon(
       id: 06,
@@ -98,6 +147,15 @@ class _HomeScreenState extends State<HomeScreen> {
       maleDescription:
           'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
       femaleDescription: '',
+      height: 1.7,
+      abilities: 'Blaze',
+      category: 'Flame',
+      weight: 90.5,
+      weakness: [
+        Weak(name: 'Water', color: Colors.blue),
+        Weak(name: 'Eletric', color: Colors.yellow),
+        Weak(name: 'Rock', color: Colors.brown),
+      ],
     ),
   ];
 

@@ -57,6 +57,11 @@ class _CardItemExpandedWidgetState extends State<CardItemExpandedWidget> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Text(
+                      'Description',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    const SizedBox(height: 8),
                     Text(
                       widget.pokemon.maleDescription,
                       style: TextStyle(
@@ -75,6 +80,163 @@ class _CardItemExpandedWidgetState extends State<CardItemExpandedWidget> {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Height',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  Text(
+                                    '${widget.pokemon.height}',
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      color: Colors.grey.shade900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Category',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  Text(
+                                    widget.pokemon.category,
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      color: Colors.grey.shade900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Abilities',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  Text(
+                                    widget.pokemon.abilities,
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      color: Colors.grey.shade900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 32),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Weight',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    '${widget.pokemon.weight}',
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      color: Colors.grey.shade900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Gender',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Wrap(
+                                    children: const [
+                                      Icon(
+                                        Icons.male,
+                                      ),
+                                      SizedBox(width: 8),
+                                      Icon(
+                                        Icons.female,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Weakness',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 4,
+                          children: List.generate(
+                            widget.pokemon.weakness.length,
+                            (index) => TypeItemWidget(
+                              text: widget.pokemon.weakness[index].name,
+                              color: widget.pokemon.weakness[index].color,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
