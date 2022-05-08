@@ -5,6 +5,7 @@ import 'package:estudosflutter/src/models/type/weakness.dart';
 import 'package:estudosflutter/src/screens/home/widgets/card_item_widget.dart';
 import 'package:estudosflutter/src/screens/home/widgets/card_item_widget_expanded.dart';
 import 'package:estudosflutter/src/screens/home/widgets/header_widget.dart';
+import 'package:estudosflutter/src/services/pokedex_api.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isEnable = false;
-  final List<Pokemon> pokemons = [
+  /* final List<Pokemon> pokemons = [
     Pokemon(
       id: 01,
       name: 'Bulbassaur',
@@ -157,7 +158,20 @@ class _HomeScreenState extends State<HomeScreen> {
         Weak(name: 'Rock', color: Colors.brown),
       ],
     ),
-  ];
+  ]; */
+
+  List<Pokemon> pokemons = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getPokemons();
+  }
+
+  getPokemons() async {
+    pokemons = await PokedexAPI().getPokemons();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {

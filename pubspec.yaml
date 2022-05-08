@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^2.3.2
   animations: ^2.0.2
   font_awesome_flutter: ^10.1.0
+  graphql: ^5.0.0
 
 dev_dependencies:
   flutter_test:
